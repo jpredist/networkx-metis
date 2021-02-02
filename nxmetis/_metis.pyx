@@ -212,7 +212,10 @@ def part_graph(xadj, adjncy, nparts, vwgt=None, vsize=None, adjwgt=None,
     -----
     This wrapper function performs only minimal input validation to ensure
     memory safety in invocation of METIS.
+
+    TODO: input validation, no floats lol
     """
+    cdef _api.idx_t vtxdist = NULL 
     cdef _api.idx_t nvtxs
     cdef _api.idx_t *_xadj = NULL
     cdef _api.idx_t *_adjncy = NULL
